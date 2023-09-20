@@ -1,0 +1,5 @@
+<IfModule mod_headers.c>
+    # Habilitar el módulo de encabezados si no está habilitado
+    Header set Cache-Control "max-age=31536000, public"
+    Header set Expires "access plus 1 year"
+</IfModule>
