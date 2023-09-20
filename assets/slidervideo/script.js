@@ -27,7 +27,7 @@
 
     function getYTPreviewUrl(videoId, quality) {
         return 'https://img.youtube.com/vi/' + videoId + '/' +
-            (quality || '') + 'default.jpg';
+            (quality || '') + 'default.webp';
     }
 
     function getVimeoPreviewUrl(vimeoId, callback) {
@@ -63,14 +63,14 @@
                         // selection of preview in the best quality
                         var file = this.src.split('/').pop();
                         switch (file) {
-                            case 'maxresdefault.jpg':
-                                this.src = this.src.replace(file, 'sddefault.jpg');
+                            case 'maxresdefault.webp':
+                                this.src = this.src.replace(file, 'sddefault.webp');
                                 break;
-                            case 'sddefault.jpg':
-                                this.src = this.src.replace(file, 'hqdefault.jpg');
+                            case 'sddefault.webp':
+                                this.src = this.src.replace(file, 'hqdefault.webp');
                                 break;
-                            case 'hqdefault.jpg':
-                                this.src = this.src.replace(file, 'default.jpg');
+                            case 'hqdefault.webp':
+                                this.src = this.src.replace(file, 'default.webp');
                                 break;
                             default:
                                 cache[id] = null;

@@ -352,7 +352,7 @@
                         // youtube
                         if (parsedUrl && /youtube/g.test(parsedUrl[3])) {
                             var previewURL = 'http' + ('https:' === location.protocol ? 's' : '') + ':';
-                            previewURL += '//img.youtube.com/vi/' + parsedUrl[6] + '/maxresdefault.jpg';
+                            previewURL += '//img.youtube.com/vi/' + parsedUrl[6] + '/maxresdefault.webp';
 
                             $('<img>').on('load', function() {
                                 if (120 === (this.naturalWidth || this.width)) {
@@ -360,15 +360,15 @@
                                     var file = this.src.split('/').pop();
 
                                     switch (file) {
-                                        case 'maxresdefault.jpg':
-                                            this.src = this.src.replace(file, 'sddefault.jpg');
+                                        case 'maxresdefault.webp':
+                                            this.src = this.src.replace(file, 'sddefault.webp');
                                             break;
-                                        case 'sddefault.jpg':
-                                            this.src = this.src.replace(file, 'hqdefault.jpg');
+                                        case 'sddefault.webp':
+                                            this.src = this.src.replace(file, 'hqdefault.webp');
                                             break;
                                         default: // image not found
                                             if (isBuilder) {
-                                                $img.css('background-image', 'url("images/no-video.jpg")')
+                                                $img.css('background-image', 'url("images/no-video.webp")')
                                                     .show();
                                             }
                                     }
@@ -398,7 +398,7 @@
                                         $img.css('background-image', 'url("' + response[0].thumbnail_large + '")')
                                             .show();
                                     } else if (isBuilder) { // image not found
-                                        $img.css('background-image', 'url("images/no-video.jpg")')
+                                        $img.css('background-image', 'url("images/no-video.webp")')
                                             .show();
                                     }
                                 }
@@ -417,7 +417,7 @@
                             }
                         }
                     } else if (isBuilder) { // neither youtube nor vimeo
-                        $img.css('background-image', 'url("images/video-placeholder.jpg")')
+                        $img.css('background-image', 'url("images/video-placeholder.webp")')
                             .show();
                     }
                 });
